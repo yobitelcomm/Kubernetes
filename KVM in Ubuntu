@@ -1,0 +1,41 @@
+egrep -c '(vmx|svm)' /proc/cpuinfo
+
+kvm-ok
+sudo apt install cpu-checker
+
+Install KVM on Ubuntu 22.04
+sudo apt install -y qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils
+
+or 
+sudo apt install -y qemu qemu-kvm virt-manager libvirt-daemon-system virtinst libvirt-clients bridge-utils libvirt-clients cloud-image-utils libguestfs-tools
+
+Enable the virtualization daemon
+sudo systemctl enable --now libvirtd
+sudo systemctl start libvirtd
+
+Check virtualization daemon is running
+sudo systemctl status libvirtd
+
+Add Your User to the KVM and Libvirt Group
+sudo usermod -aG kvm $USER
+sudo usermod -aG libvirt $USER
+
+Run KVM Virtual Machines Manager
+
+lsmod | grep kvm
+
+to start virtlibd daemon: journalctl -u libvirtd.service
+
+https://www.youtube.com/watch?v=_CkffsxpI5E
+https://www.youtube.com/watch?v=KFVe0-B2yLI
+
+----
+
+sudo ufw allow 1022/tcp
+sudo apt install update-manager-core
+sudo do-release-upgrade -d
+
+----
+
+osinfo-query os
+lscpu | grep Virtualization
