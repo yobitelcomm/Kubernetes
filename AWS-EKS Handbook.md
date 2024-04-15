@@ -39,8 +39,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 kubectl version --client
 ```
 
-### 7. To interact with Amazon Elastic Kubernetes Service (EKS) update the kubeconfig file of the local machine with the
-### necessary authentication and endpoint information required to communicate with the specified EKS cluster.
+### 7. To interact with Amazon Elastic Kubernetes Service (EKS) update the kubeconfig file of the local machine with the necessary authentication and endpoint information required to communicate with the specified EKS cluster.
 ```
 aws eks --region <region-name> update-kubeconfig --name <cluster name> 
 aws eks --region eu-west-2 update-kubeconfig --name eks-intel
