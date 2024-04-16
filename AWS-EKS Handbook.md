@@ -23,7 +23,8 @@ helm list
 
 ### 4. To list the clusters
 ```
-$ aws eks --region <region> list-clusters -> $ aws eks --region eu-west-2 list-clusters
+$ aws eks --region <region> list-clusters
+$ aws eks --region eu-west-2 list-clusters
 ```
 
 ### 5. To describe the cluster
