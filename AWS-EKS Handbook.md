@@ -110,3 +110,14 @@ sh.helm.release.v1.ks.v1   helm.sh/release.v1   1      76m
 kubectl get secret --namespace kafka-test ks-grafana -o jsonpath="{.data.admin-password}"
 ```
 decode the value in the online tool: https://www.base64decode.org/
+
+### 16. Docker Installation
+```
+sudo yum -y install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+docker version
+sudo chmod 666 /var/run/docker.sock
+docker version
+```
+
